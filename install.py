@@ -64,3 +64,13 @@ def install_chaos():
     command_install = 'cd /usr/local/go/bin'
     command_install_2 = 'mv * /usr/bin'
     print('[+] Chaos install Finished... [+]')
+
+def install_cariddi():
+    print('[+] Cariddi install Start... [+]')
+    command_dowload = 'go install -v github.com/edoardottt/cariddi/cmd/cariddi@latest'
+    command_install = 'cd /usr/local/go/bin'
+    command_install_2 = 'mv * /usr/bin'
+    print('[+] Cariddi install Finished... [+]')
+
+
+print('[-]Finished[-]')
