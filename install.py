@@ -52,3 +52,10 @@ def install_bhedak():
     print('[+] Bhedak install Start... [+]')
     command_install = 'pip3 install bhedak'
     print('[+] Bhedak install Finished... [+]')
+
+def install_cfchek():
+    print('[+] Cfchek install Start... [+]')
+    command_dowload = '$ go install github.com/dwisiswant0/cf-check@latest'
+    command_install = 'cd /usr/local/go/bin'
+    command_install_1 = 'mv * /usr/bin'
+    print('[+] Cfchek install Finished... [+]')
