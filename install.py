@@ -59,3 +59,10 @@ def install_cfchek():
     command_install = 'cd /usr/local/go/bin'
     command_install_1 = 'mv * /usr/bin'
     print('[+] Cfchek install Finished... [+]')
+
+def install_chaos():
+    print('[+] Chaos install start... [+]')
+    command_dowload = 'go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest'
+    command_install = 'cd /usr/local/go/bin'
+    command_install_2 = 'mv * /usr/bin'
+    print('[+] Chaos install Finished... [+]')
