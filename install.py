@@ -41,3 +41,14 @@ def install_tomnonom():
     print('[+] Tomnonom hacks install Finished... [+]')
  
 
+def install_airixss():
+    print('[+] Airixss install Start... [+]')
+    command_dowload = 'go install github.com/ferreiraklet/airixss@latest'
+    command_install = 'cd /usr/local/go/bin'
+    command_install_2 = 'mv * /usr/bin'
+    print('[+] Airixss install Finished... [+]')
+
+def install_bhedak():
+    print('[+] Bhedak install Start... [+]')
+    command_install = 'pip3 install bhedak'
+    print('[+] Bhedak install Finished... [+]')
