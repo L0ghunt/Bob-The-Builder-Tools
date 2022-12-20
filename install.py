@@ -21,7 +21,7 @@ class Install(object):
         popen(command_install).read()
         command_move_go_1 = 'cd /usr/local/go/bin'
         popen(command_move_go_1).read()
-        command_move_go_2 = 'mv * /usr/bin'
+        command_move_go_2 = 'mv go gofmt /usr/bin'
         popen(command_move_go_2)
         command_go_version = 'go version'
         popen(command_go_version).read()
