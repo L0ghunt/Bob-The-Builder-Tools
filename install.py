@@ -8,69 +8,51 @@ def validate_root():
         exit()
     else:
         pass
-#install go
-def install_go():
-    print('[+] Golang install Start... [+]')
-    command_dowload_go = 'wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz'
-    command_install_go = 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz'
+#dowload go
+def dowload_go():
+    print('[+] Golang Download Start... [+]')
+    command_download_go = 'wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz'
+    command_install = 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz'
     command_move_go_1 = 'cd /usr/local/go/bin'
     command_move_go_2 = 'mv * /usr/bin'
     command_go_version = 'go version'
-    print('[+] Golang install finished... [+]')
+    print('[+] Golang Download finished... [+]')
 
-#install tools
-def install_amass():
-    print('[+] Amass install Start... [+]')
-    command_dowload = 'go install -v github.com/OWASP/Amass/v3/...@master'
-    print('[+] Amass install Finished... [+]')
+#dowload go tools via go install
+# def dowload_amass():
+#     print('[+] Amass Download Start... [+]')
+#     command_download = 'go install -v github.com/OWASP/Amass/v3/...@master'
+#     print('[+] Amass Download Finished... [+]')
 
-def install_anew():
-    print('[+] Anew install Start... [+]')
-    command_dowload = 'go install -v github.com/tomnomnom/anew@latest'
-    print('[+] Anew install Finished... [+]')
+# def dowload_anew():
+#     print('[+] Anew Download Start... [+]')
+#     command_download = 'go install -v github.com/tomnomnom/anew@latest'
+#     print('[+] Anew Download Finished... [+]')
 
-def install_tomnonom():
-    print('[+] Tomnonom hacks install Start... [+]')
-    command_clone = 'git clonehttps://github.com/tomnomnom/hacks.git '
-    command_install = 'cd hacks/'
-    command_install_2 = 'cd assetfinder/'
-    command_install_3 = 'go build'
-    command_install_4 = 'mv assetfinder /usr/bin'
-    command_install_4 = 'cd ..'
-    print('[+] Tomnonom hacks install Finished... [+]')
- 
-def install_airixss():
-    print('[+] Airixss install Start... [+]')
-    command_dowload = 'go install github.com/ferreiraklet/airixss@latest'
-    command_install = 'cd /usr/local/go/bin'
-    command_install_2 = 'mv * /usr/bin'
-    print('[+] Airixss install Finished... [+]')
+# def dowload_airixss():
+#     print('[+] Airixss Download Start... [+]')
+#     command_download = 'go install github.com/ferreiraklet/airixss@latest'
+#     print('[+] Airixss Download Finished... [+]')
 
-def install_bhedak():
-    print('[+] Bhedak install Start... [+]')
-    command_install = 'pip3 install bhedak'
-    print('[+] Bhedak install Finished... [+]')
+# def dowload_cfchek():
+#     print('[+] Cfchek Download Start... [+]')
+#     command_download = '$ go install github.com/dwisiswant0/cf-check@latest'
+#     print('[+] Cfchek Download Finished... [+]')
 
-def install_cfchek():
-    print('[+] Cfchek install Start... [+]')
-    command_dowload = '$ go install github.com/dwisiswant0/cf-check@latest'
-    command_install = 'cd /usr/local/go/bin'
-    command_install_1 = 'mv * /usr/bin'
-    print('[+] Cfchek install Finished... [+]')
+# def dowload_chaos():
+#     print('[+] Chaos Download start... [+]')
+#     command_download = 'go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest'
+#     print('[+] Chaos Download Finished... [+]')
 
-def install_chaos():
-    print('[+] Chaos install start... [+]')
-    command_dowload = 'go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest'
-    command_install = 'cd /usr/local/go/bin'
-    command_install_2 = 'mv * /usr/bin'
-    print('[+] Chaos install Finished... [+]')
+# def dowload_cariddi():
+#     print('[+] Cariddi Download Start... [+]')
+#     command_download = 'go install -v github.com/edoardottt/cariddi/cmd/cariddi@latest'
+#     print('[+] Cariddi Download Finished... [+]')
 
-def install_cariddi():
-    print('[+] Cariddi install Start... [+]')
-    command_dowload = 'go install -v github.com/edoardottt/cariddi/cmd/cariddi@latest'
-    command_install = 'cd /usr/local/go/bin'
-    command_install_2 = 'mv * /usr/bin'
-    print('[+] Cariddi install Finished... [+]')
+# def dowload_dalfox():
+#     print('[+] Dalfox Download Start... [+]')
+#     command_download = 'go install github.com/hahwul/dalfox/v2@latest'
+#     print('[+] Dalfox Download Finished... [+]')
 
 
 print('[-]Finished[-]')
