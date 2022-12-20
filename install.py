@@ -1,7 +1,7 @@
 from os import *
 from os import geteuid
 
-
+#validate root
 def validate_root():
     if not geteuid() == 0:
         print("-] Please run this script as root... [-]")
@@ -9,7 +9,6 @@ def validate_root():
     else:
         pass
 #install go
-#teste
 def install_go():
     print('[+] Golang install Start... [+]')
     command_dowload_go = 'wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz'
@@ -40,7 +39,6 @@ def install_tomnonom():
     command_install_4 = 'cd ..'
     print('[+] Tomnonom hacks install Finished... [+]')
  
-
 def install_airixss():
     print('[+] Airixss install Start... [+]')
     command_dowload = 'go install github.com/ferreiraklet/airixss@latest'
