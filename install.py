@@ -1,3 +1,4 @@
+from copyreg import remove_extension
 from os import *
 from os import geteuid
 
@@ -12,11 +13,46 @@ class Install(object):
             exit()
         else:
             pass
-
-    def download_go_and_install(self):
+#Download and Install Golang
+    def Download_go(self):
+        command_download_go = 'wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz'
         print('[+] Golang Download Start... [+]')
-        command_download_go_and_install = 'wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz && rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz && cd /usr/local/go/bin && mv go gofmt /usr/bin && cd /root && go version'
-        popen(command_download_go_and_install).read()
+        print(popen(command_download_go).read())
+        print('[+] Golang Download Finished... [+]')
+
+             
+    def Remover_go(self):
+        command_remover_go = 'rm -rf /usr/local/go'
+        print('[+] Removendo Diretorio go... [+]')
+        print(popen(command_remover_go).read())
+        print('[+] Golang removido com sucesso...[+]')
+
+    def Extrair_go(sefl):
+        command_Extrair = 'tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz'
+        print('[+] ... [+]')
+        print(popen(command_extrair).read())
+        print('[+] Golang Install Finished...[+]')
+    
+    def entrar_na_pasta_go(self):
+        command_download_go_and_install = 'cd /usr/local/go/bin'
+        print('[+] Golang Install Start... [+]')
+        print(popen(command_download_go_and_install).read())
+        print('[+] Golang Install Finished...[+]')
+    
+    def mover_go(self):
+        command_download_go_and_install = 'mv go gofmt /usr/bin'
+        print('[+] Golang Install Start... [+]')
+        print(popen(command_download_go_and_install).read())
+        print('[+] Golang Install Finished...[+]')
+
+    def voltar_na_pasta_root(self):
+        command_download_go_and_install = 'cd /root'
+        print('[+] Golang Install Start... [+]')
+        print(popen(command_download_go_and_install).read())
+        print('[+] Golang Install Finished...[+]')
+
+
+
         
 #dowload go tools via go install
 # def dowload_amass():
@@ -56,4 +92,4 @@ class Install(object):
 user_start_input = str(input("Digite Start para Iniciar as Instalações: "))
 install_to_install = Install(user_start_input)
 install_to_install.validate_root()
-install_to_install.download_go_and_install()
+install_to_install.download_go()
