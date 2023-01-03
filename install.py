@@ -96,7 +96,24 @@ class Install(object):
 #     print('[+] Dalfox Download Start... [+]')
 #     command_download = 'go install github.com/hahwul/dalfox/v2@latest'
 #     print('[+] Dalfox Download Finished... [+]')
+
+print("""  ____                            _            __  __""")
+print(""" | __ )    ___    _   _   _ __   | |_   _   _  \ \/ /""")
+print(""" |  _ \   / _ \  | | | | | '_ \  | __| | | | |  \  / """)
+print(""" | |_) | | (_) | | |_| | | | | | | |_  | |_| |  /  \ """)
+print(""" |____/   \___/   \__,_| |_| |_|  \__|  \__, | /_/\_\ """)
+print("""                                        |___/   """)
+print("           Intalll                               ")
+
 user_start_input = str(input("Digite Start para Iniciar as Instalações: "))
 install_to_install = Install(user_start_input)
 install_to_install.validate_root()
-install_to_install.download_go()
+install_to_install.Download_go()
+install_to_install.Remover_go()
+install_to_install.Extrair_go()
+install_to_install.Entrar_na_pasta_go()
+install_to_install.Mover_go()
+install_to_install.Voltar_na_pasta_root()
+install_to_install.Vericar_go
+
+
