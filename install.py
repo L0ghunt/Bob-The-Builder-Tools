@@ -35,13 +35,13 @@ class Install(object):
     
     def Mover_go(self):
         command_movendo_go = 'mv /usr/local/go/bin/go /usr/bin'
-        print('[+] Movendo Golang... [+]')
+        print('[+] Movendo go... [+]')
         print(popen(command_movendo_go).read())
         print('[+] Movido com Sucesso...[+]')
 
     def Mover_gofmt(self):
         command_movendo_go = 'mv /usr/local/go/bin/gofmt /usr/bin'
-        print('[+] Movendo Golang... [+]')
+        print('[+] Movendo gofmt... [+]')
         print(popen(command_movendo_go).read())
         print('[+] Movido com Sucesso...[+]')
 
