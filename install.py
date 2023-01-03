@@ -45,14 +45,8 @@ class Install(object):
         print(popen(command_movendo_go).read())
         print('[+] Movido com Sucesso...[+]')
 
-    def Voltar_na_pasta_root(self):
-        command_voltar_root = 'cd /root'
-        print('[+] Voltando a pasta Root ... [+]')
-        print(popen(command_voltar_root).read())
-        print('[+] Feito com Sucesso...[+]')
-
     def Vericar_go(self):
-        command_vericar = 'go version'
+        command_verificar = 'go version'
         print('[+] Verificando Golang... [+]')
         print(popen(command_verificar).read())
         print('[+] Instalado com Sucesso...[+]')
@@ -111,9 +105,8 @@ install_to_install.validate_root()
 install_to_install.Download_go()
 install_to_install.Remover_go()
 install_to_install.Extrair_go()
-install_to_install.Entrar_na_pasta_go()
 install_to_install.Mover_go()
-install_to_install.Voltar_na_pasta_root()
+install_to_install.Mover_gofmt()
 install_to_install.Vericar_go
 
 
