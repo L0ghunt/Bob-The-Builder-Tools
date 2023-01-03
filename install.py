@@ -33,14 +33,14 @@ class Install(object):
         print(popen(command_extrair).read())
         print('[+] Golang extraido com Sucesso...[+]')
     
-    def Entrar_na_pasta_go(self):
-        command_entrar_na_pasta = 'cd /usr/local/go/bin'
-        print('[+] Entrando na pasta... [+]')
-        print(popen(command_entrar_na_pasta).read())
-        print('[+] Feito com Sucesso...[+]')
-    
     def Mover_go(self):
-        command_movendo_go = 'mv go gofmt /usr/bin'
+        command_movendo_go = 'mv /usr/local/go/bin/go /usr/bin'
+        print('[+] Movendo Golang... [+]')
+        print(popen(command_movendo_go).read())
+        print('[+] Movido com Sucesso...[+]')
+
+    def Mover_gofmt(self):
+        command_movendo_go = 'mv /usr/local/go/bin/gofmt /usr/bin'
         print('[+] Movendo Golang... [+]')
         print(popen(command_movendo_go).read())
         print('[+] Movido com Sucesso...[+]')
