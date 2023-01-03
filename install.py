@@ -13,20 +13,11 @@ class Install(object):
         else:
             pass
 
-    def download_go(self):
+    def download_go_and_install(self):
         print('[+] Golang Download Start... [+]')
-        command_download_go = 'wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz'
-        popen(command_download_go).read()
-        command_install = 'rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz'
-        popen(command_install).read()
-        command_move_go_1 = 'cd /usr/local/go/bin'
-        popen(command_move_go_1).read()
-        command_move_go_2 = 'mv go gofmt /usr/bin'
-        popen(command_move_go_2)
-        command_go_version = 'go version'
-        popen(command_go_version).read()
-        print('[+] Golang Download finished... [+]')
-
+        command_download_go_and_install = 'wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz && rm -rf /usr/local/go && tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz && cd /usr/local/go/bin && mv go gofmt /usr/bin && cd /root && go version'
+        popen(command_download_go_and_install).read()
+        
 #dowload go tools via go install
 # def dowload_amass():
 #     print('[+] Amass Download Start... [+]')
