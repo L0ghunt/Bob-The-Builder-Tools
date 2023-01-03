@@ -53,7 +53,7 @@ class Install(object):
 #     print('[+] Dalfox Download Start... [+]')
 #     command_download = 'go install github.com/hahwul/dalfox/v2@latest'
 #     print('[+] Dalfox Download Finished... [+]')
-user_start_input = str(input("Digite Start para começar"))
+user_start_input = str(input("Digite Start para Iniciar as Instalações: "))
 install_to_install = Install(user_start_input)
 install_to_install.validate_root()
-install_to_install.download_go()
+install_to_install.download_go_and_install()
