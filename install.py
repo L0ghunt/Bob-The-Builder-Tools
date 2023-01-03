@@ -16,27 +16,27 @@ class Install(object):
 #Download and Install Golang
     def Download_go(self):
         command_download_go = 'wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz'
-        print('[+] Golang Download Start... [+]')
+        print('[+] Golang Download Iniciado... [+]')
         print(popen(command_download_go).read())
-        print('[+] Golang Download Finished... [+]')
+        print('[+] Download feito com Sucesso... [+]')
 
              
     def Remover_go(self):
         command_remover_go = 'rm -rf /usr/local/go'
         print('[+] Removendo Diretorio go... [+]')
         print(popen(command_remover_go).read())
-        print('[+] Golang removido com sucesso...[+]')
+        print('[+] Golang removido com Sucesso...[+]')
 
     def Extrair_go(sefl):
         command_Extrair = 'tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz'
-        print('[+] ... [+]')
+        print('[+] Extraindo Golang... [+]')
         print(popen(command_extrair).read())
-        print('[+] Golang Install Finished...[+]')
+        print('[+] Golang extraido com Sucesso...[+]')
     
-    def entrar_na_pasta_go(self):
-        command_download_go_and_install = 'cd /usr/local/go/bin'
+    def Entrar_na_pasta_go(self):
+        command_entrar_na_pasta = 'cd /usr/local/go/bin'
         print('[+] Golang Install Start... [+]')
-        print(popen(command_download_go_and_install).read())
+        print(popen(command_entrar_na_pasta).read())
         print('[+] Golang Install Finished...[+]')
     
     def mover_go(self):
