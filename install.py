@@ -107,6 +107,6 @@ install_to_install.Remover_go()
 install_to_install.Extrair_go()
 install_to_install.Mover_go()
 install_to_install.Mover_gofmt()
-install_to_install.Vericar_go
+install_to_install.Vericar_go()
 
 
