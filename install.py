@@ -53,13 +53,13 @@ class Install(object):
 
 
 
-
-        
 #dowload go tools via go install
-# def dowload_amass():
-#     print('[+] Amass Download Start... [+]')
-#     command_download = 'go install -v github.com/OWASP/Amass/v3/...@master'
-#     print('[+] Amass Download Finished... [+]')
+def download_amass():
+    print('[+] Amass Download Start... [+]')
+    command_download = 'go install -v github.com/OWASP/Amass/v3/...@master'
+    print('[+] Amass Download Finished... [+]')       
+
+
 
 # def dowload_anew():
 #     print('[+] Anew Download Start... [+]')
@@ -108,5 +108,7 @@ install_to_install.Extrair_go()
 install_to_install.Mover_go()
 install_to_install.Mover_gofmt()
 install_to_install.Vericar_go()
+install_to_install.download_amass()
+
 
 
