@@ -14,7 +14,7 @@ class B0untyX(object):
             pass
 
     def domain_to_url(self):
-        domain_to_ulr_command = 'subfinder -d '+self.domain+' -o result_domain_'+self.domain+'.txt | httpx -l result_domain'+self.domain+'.txt -silent > result_httpx'+self.domain+'.txt'
+        domain_to_ulr_command = 'subfinder -d '+self.domain+' -o Domain_'+self.domain+'.txt | httpx -l result_domain'+self.domain+'.txt -silent > result_httpx'+self.domain+'.txt'
         print("[*] domain to url execute process starting... [*]")
         popen(domain_to_ulr_command).read()
         print('[+] domain to url finished... [+]')
