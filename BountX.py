@@ -32,7 +32,7 @@ class B0untyX(object):
         print("[+] urls to crawlers finished... [+]")
 
     def urls_to_crawlers2(self):
-        urls_to_command = 'cat '+self.domain+'_200_domain | gauplus | anew '+self.domain+'_urls'
+        urls_to_command = 'cat '+self.domain+'_200_domains | gauplus | anew '+self.domain+'_urls'
         print("[*] urls to crawlers metodh 2 execute process starting... [*]")
         popen(urls_to_command).read()
         print("[+] urls to crawlers finished... [+]")
