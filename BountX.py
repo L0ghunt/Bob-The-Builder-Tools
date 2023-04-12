@@ -19,11 +19,20 @@ class B0untyX(object):
         popen(domain_to_enumerate_command).read()
         print('[+] domain to enumerate finished... [+]')
 
+    def valit_domains(self):
+        valit_domains_command = 'cat '+self.domain+' | httpx -silent -mc 200 | anew '+self.domain+'_200_domains'
+        print("[*] Valit domains execute process starting... [*]")
+        popen(valit_domains_command).read()
+        print("[*] Valit domains execute finished... [*]")
+
     def ulrs_to_crawlers1(self):
-        urls_to_command = 'cat '+self.domain+'_domains | katana -silent | anew crawler_'+self.domain+'_urls'
-        print("[*] urls to crawlers execute process starting... [*]")
+        urls_to_command = 'cat '+self.domain+'_200_domains | katana -silent | anew crawler_'+self.domain+'_urls'
+        print("[*] urls to crawlers metodh 1 execute process starting... [*]")
         popen(urls_to_command).read()
         print("[+] urls to crawlers finished... [+]")
+
+    def urls_to_crawlers2(self):
+        
 
 
 #    def urls_params(self):
@@ -46,5 +55,6 @@ user_domain_input = str(input("[+] Enter domain to scan >>  [ EX: domain.com.br 
 domain_to_scan = B0untyX(user_domain_input)
 domain_to_scan.validate_run_as_root()
 domain_to_scan.domain_to_enumerate()
+domain_to_scan.valit_domains()
 domain_to_scan.ulrs_to_crawlers1()
 #domain_to_scan.ulrs_to_params()
