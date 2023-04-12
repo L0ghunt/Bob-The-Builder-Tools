@@ -23,19 +23,13 @@ class B0untyX(object):
         os.popen(valit_domains_command).read()
         print("[*] Valit domains execute finished... [*]")
 
-    def ulrs_to_crawlers1(self):
-        urls_to_command = f'cat {self.domain}_200_domains | katana -silent | anew {self.domain}_urls'
-        print("[*] urls to crawlers metodh 1 execute process starting... [*]")
-        os.popen(urls_to_command).read()
-        print("[+] urls to crawlers finished... [+]")
-
-    def urls_to_crawlers2(self):
+    def urls_to_crawlers(self):
         urls_to_command = f'cat {self.domain}_200_domains | gauplus | anew {self.domain}_urls'
         print("[*] urls to crawlers metodh 2 execute process starting... [*]")
         os.popen(urls_to_command).read()
         print("[+] urls to crawlers finished... [+]")
 
-    def url_param(self):
+    def urls_param(self):
         urls_to_params_command = f'cat {self.domain}_urls | grep -Po \'(?<=(\?|&))[^&]*(?==)\' | anew {self.domain}_params'
         print("[*] Filter to crawlers execute process starting... [*]")
         os.popen(urls_to_params_command).read()
@@ -62,7 +56,6 @@ domain_to_scan = B0untyX(user_domain_input)
 domain_to_scan.validate_run_as_root()
 domain_to_scan.domain_to_enumerate()
 domain_to_scan.valit_domains()
-domain_to_scan.ulrs_to_crawlers1()
-domain_to_scan.urls_to_crawlers2()
-domain_to_scan.ulr_param()
+domain_to_scan.ulrs_to_crawlers()
+domain_to_scan.ulrs_param()
 domain_to_scan.nuclei_scan()
