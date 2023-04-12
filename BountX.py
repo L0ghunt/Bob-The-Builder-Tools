@@ -26,20 +26,28 @@ class B0untyX(object):
         print("[*] Valit domains execute finished... [*]")
 
     def ulrs_to_crawlers1(self):
-        urls_to_command = 'cat '+self.domain+'_200_domains | katana -silent | anew crawler_'+self.domain+'_urls'
+        urls_to_command = 'cat '+self.domain+'_200_domains | katana -silent | anew '+self.domain+'_urls'
         print("[*] urls to crawlers metodh 1 execute process starting... [*]")
         popen(urls_to_command).read()
         print("[+] urls to crawlers finished... [+]")
 
     def urls_to_crawlers2(self):
-        
+        urls_to_command = 'cat '+self.domain+'_200_domain | gauplus | anew '+self.domain+'_urls'
+        print("[*] urls to crawlers metodh 2 execute process starting... [*]")
+        popen(urls_to_command).read()
+        print("[+] urls to crawlers finished... [+]")
 
+    def urls_params(self):
+        urls_to_params_command = 'cat '+self.domain+"_urls | grep -Po '(?<=(\?|&))[^&]*(?==)' | anew "+self.domain+'_params'
+        print("[*] Filter to crawlers execute process starting... [*]")
+        popen(urls_to_params_command).read()
+        print("[+] Filter to crawlers for urls params finished... [+]")
 
-#    def urls_params(self):
-#        urls_to_params_command = ''
-#        print("[*] Filter to crawlers execute process starting... [*]")
-#        popen(urls_to_params_command).read()
-#        print("[+] Filter to crawlers for urls params finished... [+]")
+    def nuceli_scan(self):
+        nuclei_scan_command = 'nuclei -l '+self.domain+'_params -t /root/nuclei-templates -es info | anew '+self.domain+'_nuclei_scan'
+        print(" [*] Nuclei scan execute starting... [*]")
+        popen(nuclei_scan_command).read()
+        print(" [+] Nuclei scan execute finished [+]")
 
     
 
@@ -57,4 +65,6 @@ domain_to_scan.validate_run_as_root()
 domain_to_scan.domain_to_enumerate()
 domain_to_scan.valit_domains()
 domain_to_scan.ulrs_to_crawlers1()
-#domain_to_scan.ulrs_to_params()
+domain_to_scan.urls_to_crawlers2()
+domain_to_scan.ulrs_params()
+domain_to_scan.nuceli_scan()
