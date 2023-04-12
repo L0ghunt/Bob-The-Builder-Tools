@@ -13,17 +13,18 @@ class B0untyX(object):
         else:
             pass
 
-    def domain_to_url(self):
-        domain_to_ulr_command = 'subfinder -d '+self.domain+' -o Domain_'+self.domain+'.txt | httpx -l result_domain'+self.domain+'.txt -silent > result_httpx'+self.domain+'.txt'
-        print("[*] domain to url execute process starting... [*]")
-        popen(domain_to_ulr_command).read()
-        print('[+] domain to url finished... [+]')
+    
+    # def domain_to_url(self):
+    #     domain_to_ulr_command = 'subfinder -d '+self.domain+' -o Domain_'+self.domain+'.txt | httpx -l result_domain'+self.domain+'.txt -silent > result_httpx'+self.domain+'.txt'
+    #     print("[*] domain to url execute process starting... [*]")
+    #     popen(domain_to_ulr_command).read()
+    #     print('[+] domain to url finished... [+]')
 
-    def ulrs_to_crawlers(self):
-        urls_to_command = 'cat Domain_'+self.domain+'.txt | katana -silent | anew crawler_'+self.domain+'_urls'
-        print("[*] urls to crawlers execute process starting... [*]")
-        popen(urls_to_command).read()
-        print("[+] urls to crawlers finished... [+]")
+    # def ulrs_to_crawlers(self):
+    #     urls_to_command = 'cat Domain_'+self.domain+'.txt | katana -silent | anew crawler_'+self.domain+'_urls'
+    #     print("[*] urls to crawlers execute process starting... [*]")
+    #     popen(urls_to_command).read()
+    #     print("[+] urls to crawlers finished... [+]")
 
 #    def urls_params(self):
 #        urls_to_params_command = ''
