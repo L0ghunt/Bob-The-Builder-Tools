@@ -37,7 +37,7 @@ class B0untyX(object):
         popen(urls_to_command).read()
         print("[+] urls to crawlers finished... [+]")
 
-    def urls_params(self):
+    def url_param(self):
         urls_to_params_command = 'cat '+self.domain+"_urls | grep -Po '(?<=(\?|&))[^&]*(?==)' | anew "+self.domain+'_params'
         print("[*] Filter to crawlers execute process starting... [*]")
         popen(urls_to_params_command).read()
@@ -66,5 +66,5 @@ domain_to_scan.domain_to_enumerate()
 domain_to_scan.valit_domains()
 domain_to_scan.ulrs_to_crawlers1()
 domain_to_scan.urls_to_crawlers2()
-domain_to_scan.ulrs_params()
+domain_to_scan.ulr_param()
 domain_to_scan.nuceli_scan()
