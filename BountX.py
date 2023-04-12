@@ -13,18 +13,18 @@ class B0untyX(object):
         else:
             pass
 
-    
-    # def domain_to_url(self):
-    #     domain_to_ulr_command = 'subfinder -d '+self.domain+' -o Domain_'+self.domain+'.txt | httpx -l result_domain'+self.domain+'.txt -silent > result_httpx'+self.domain+'.txt'
-    #     print("[*] domain to url execute process starting... [*]")
-    #     popen(domain_to_ulr_command).read()
-    #     print('[+] domain to url finished... [+]')
+    def domain_to_enumerate(self):
+        domain_to_enumerate_command = 'echo '+self.domain+' | subfinder -silent | alterx -enrich | dnsx | anew '+self.domain+'_domains'
+        print("[*] domain enumarete execute process starting... [*]")
+        popen(domain_to_enumerate_command).read()
+        print('[+] domain to enumerate finished... [+]')
 
-    # def ulrs_to_crawlers(self):
-    #     urls_to_command = 'cat Domain_'+self.domain+'.txt | katana -silent | anew crawler_'+self.domain+'_urls'
-    #     print("[*] urls to crawlers execute process starting... [*]")
-    #     popen(urls_to_command).read()
-    #     print("[+] urls to crawlers finished... [+]")
+    def ulrs_to_crawlers1(self):
+        urls_to_command = 'cat '+self.domain+'_domains | katana -silent | anew crawler_'+self.domain+'_urls'
+        print("[*] urls to crawlers execute process starting... [*]")
+        popen(urls_to_command).read()
+        print("[+] urls to crawlers finished... [+]")
+
 
 #    def urls_params(self):
 #        urls_to_params_command = ''
@@ -45,6 +45,6 @@ print("""                                        |___/   """)
 user_domain_input = str(input("[+] Enter domain to scan >>  [ EX: domain.com.br ]  "))
 domain_to_scan = B0untyX(user_domain_input)
 domain_to_scan.validate_run_as_root()
-domain_to_scan.domain_to_url()
-domain_to_scan.ulrs_to_crawlers()
+domain_to_scan.domain_to_enumerate()
+domain_to_scan.ulrs_to_crawlers1()
 #domain_to_scan.ulrs_to_params()
