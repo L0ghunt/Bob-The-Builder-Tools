@@ -29,11 +29,13 @@ class B0untyX(object):
         os.popen(urls_to_command).read()
         print("[+] urls to crawlers finished... [+]")
 
-    def urls_param(self):
-        urls_to_params_command = f'cat {self.domain}_urls | grep -Po \'(?<=(\?|&))[^&]*(?==)\' | anew {self.domain}_params'
-        print("[*] Filter to crawlers execute process starting... [*]")
-        os.popen(urls_to_params_command).read()
-        print("[+] Filter to crawlers for urls params finished... [+]")
+    def urls_uro(self):
+        urls_to_params_command = ''
+    # def urls_param(self):
+    #     urls_to_params_command = f'cat {self.domain}_urls | grep -Po \'(?<=(\?|&))[^&]*(?==)\' | anew {self.domain}_params'
+    #     print("[*] Filter to crawlers execute process starting... [*]")
+    #     os.popen(urls_to_params_command).read()
+    #     print("[+] Filter to crawlers for urls params finished... [+]")
 
     def nuclei_scan(self):
         nuclei_scan_command = f'nuclei -l {self.domain}_params -t /root/nuclei-templates/* -es info | anew {self.domain}_nuclei_scan'
