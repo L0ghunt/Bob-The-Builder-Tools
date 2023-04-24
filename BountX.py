@@ -33,7 +33,7 @@ class B0untyX(object):
         print("[+] urls to crawlers finished... [+]")
 
     def nuclei_scan(self):
-        nuclei_scan_command = 'nuclei -l '+self.domain+'_urls -t /root/nuclei-templates/* -es info | anew '+self.domain+'_nuclei_scan'
+        nuclei_scan_command = 'nuclei -l '+self.domain+'_urls -t /root/nuclei-templates/* -es info | notify'
         print(" [*] Nuclei scan execute starting... [*]")
         os.popen(nuclei_scan_command).read()
         print(" [+] Nuclei scan execute finished [+]")
