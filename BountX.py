@@ -26,7 +26,7 @@ class B0untyX(object):
         os.popen(valit_domains_command).read()
         print("[*] Valit domains execute finished... [*]")
 
-    def urls_to_crawlers(self):
+    def urls_to_param(self):
         urls_to_command = 'cat '+self.domain+'_200_domains | gauplus | uro | anew '+self.domain+'_urls'
         print("[*] urls to crawlers metodh 2 execute process starting... [*]")
         os.popen(urls_to_command).read()
@@ -53,5 +53,5 @@ domain_to_scan = B0untyX(user_domain_input)
 domain_to_scan.validate_run_as_root()
 domain_to_scan.domain_to_enumerate()
 domain_to_scan.valit_domains()
-domain_to_scan.ulrs_to_crawlers()
+domain_to_scan.ulrs_to_param()
 domain_to_scan.nuclei_scan()
