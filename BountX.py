@@ -48,11 +48,6 @@ class B0untyX(object):
         print(" [+] Nuclei scan execute finished [+]")
 
 
-   
-
-    
-    
-
 print("""  ____                            _            __  __""")
 print(""" | __ )    ___    _   _   _ __   | |_   _   _  \ \/ /""")
 print(""" |  _ \   / _ \  | | | | | '_ \  | __| | | | |  \  / """)
