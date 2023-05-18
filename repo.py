@@ -38,6 +38,9 @@ repositories = [
     "github.com/Emoe/kxss"
     "github.com/j3ssie/metabigor"
     "github.com/projectdiscovery/notify/cmd/notify"
-    ""
+    "github.com/tomnomnom/qsreplace"
+    "github.com/shenwei356/rush"
+    "github.com/lc/subjs"
+    "github.com/dwisiswant0/unew"
 
 ]
