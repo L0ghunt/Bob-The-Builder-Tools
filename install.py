@@ -14,8 +14,9 @@ class Install(object):
         else:
             pass
 #Download and Install Golang
+class install_go(object):
     def Download_go(self):
-        command_download_go = 'wget https://go.dev/dl/go1.19.4.linux-amd64.tar.gz'
+        command_download_go = 'wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz'
         print('[+] Golang Download Iniciado... [+]')
         print(popen(command_download_go).read())
         print('[+] Download feito com Sucesso... [+]')
@@ -28,7 +29,7 @@ class Install(object):
         print('[+] Diretorio removido com Sucesso...[+]')
 
     def Extrair_go(sefl):
-        command_extrair = 'tar -C /usr/local -xzf go1.19.4.linux-amd64.tar.gz'
+        command_extrair = 'tar -C /usr/local -xzf go1.20.1.linux-amd64.tar.gz'
         print('[+] Extraindo Golang... [+]')
         print(popen(command_extrair).read())
         print('[+] Golang extraido com Sucesso...[+]')
@@ -51,53 +52,54 @@ class Install(object):
         print(popen(command_verificar).read())
         print('[+] Instalado com Sucesso...[+]')
 
-
-
 #dowload go tools via go install
-def download_amass():
-    print('[+] Amass Download Start... [+]')
-    command_download = 'go install -v github.com/OWASP/Amass/v3/...@master'
-    print('[+] Amass Download Finished... [+]')       
+class install_tools(object):
+    def download_amass():
+        print('[+] Amass Download Start... [+]')
+        command_download = 'go install -v github.com/OWASP/Amass/v3/...@master'
+        print('[+] Amass Download Finished... [+]')      
+    
+    def dowload_anew():
+        print('[+] Anew Download Start... [+]')
+        command_download = 'go install -v github.com/tomnomnom/anew@latest'
+        print('[+] Anew Download Finished... [+]')
+
+    def dowload_airixss():
+        print('[+] Airixss Download Start... [+]')
+        command_download = 'go install github.com/ferreiraklet/airixss@latest'
+        print('[+] Airixss Download Finished... [+]')
+
+    def dowload_cfchek():
+        print('[+] Cfchek Download Start... [+]')
+        command_download = '$ go install github.com/dwisiswant0/cf-check@latest'
+        print('[+] Cfchek Download Finished... [+]')
+
+    def dowload_chaos():
+        print('[+] Chaos Download start... [+]')
+        command_download = 'go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest'
+        print('[+] Chaos Download Finished... [+]')
+
+    def dowload_katana():
+        print('[+] katana Download Start... [+]')
+        command_download = 'go install github.com/projectdiscovery/katana/cmd/katana@latest'
+        print('[+] Katana Download Finished... [+]')
+
+    def dowload_dalfox():
+        print('[+] Dalfox Download Start... [+]')
+        command_download = 'go install github.com/hahwul/dalfox/v2@latest'
+        print('[+] Dalfox Download Finished... [+]')
 
 
 
-def dowload_anew():
-    print('[+] Anew Download Start... [+]')
-    command_download = 'go install -v github.com/tomnomnom/anew@latest'
-    print('[+] Anew Download Finished... [+]')
 
-def dowload_airixss():
-    print('[+] Airixss Download Start... [+]')
-    command_download = 'go install github.com/ferreiraklet/airixss@latest'
-    print('[+] Airixss Download Finished... [+]')
 
-def dowload_cfchek():
-    print('[+] Cfchek Download Start... [+]')
-    command_download = '$ go install github.com/dwisiswant0/cf-check@latest'
-    print('[+] Cfchek Download Finished... [+]')
-
-def dowload_chaos():
-    print('[+] Chaos Download start... [+]')
-    command_download = 'go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest'
-    print('[+] Chaos Download Finished... [+]')
-
-#def dowload_katana():
-#    print('[+] katana Download Start... [+]')
-#    command_download = ''
-#    print('[+] Katana Download Finished... [+]')
-
-def dowload_dalfox():
-    print('[+] Dalfox Download Start... [+]')
-    command_download = 'go install github.com/hahwul/dalfox/v2@latest'
-    print('[+] Dalfox Download Finished... [+]')
-
-print("""  ____                            _            __  __""")
-print(""" | __ )    ___    _   _   _ __   | |_   _   _  \ \/ /""")
-print(""" |  _ \   / _ \  | | | | | '_ \  | __| | | | |  \  / """)
-print(""" | |_) | | (_) | | |_| | | | | | | |_  | |_| |  /  \ """)
-print(""" |____/   \___/   \__,_| |_| |_|  \__|  \__, | /_/\_\ """)
-print("""                                        |___/   """)
-print("           Intalll                               ")
+# print("""  ____                            _            __  __""")
+# print(""" | __ )    ___    _   _   _ __   | |_   _   _  \ \/ /""")
+# print(""" |  _ \   / _ \  | | | | | '_ \  | __| | | | |  \  / """)
+# print(""" | |_) | | (_) | | |_| | | | | | | |_  | |_| |  /  \ """)
+# print(""" |____/   \___/   \__,_| |_| |_|  \__|  \__, | /_/\_\ """)
+# print("""                                        |___/   """)
+# print("           Intalll                               ")
 
 user_start_input = str(input("Digite Start para Iniciar as Instalações: "))
 install_to_install = Install(user_start_input)
@@ -113,7 +115,7 @@ install_to_install.download_anew()
 install_to_install.download_airixss()
 install_to_install.download_cfchek()
 install_to_install.download_chaos()
-#install_to_install.download_katana()
+install_to_install.download_katana()
 install_to_install.download_dalfox()
 
 
