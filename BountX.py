@@ -41,16 +41,16 @@ class B0untyX(object):
             os.popen(urls_to_command).read()
             print("[+] urls to crawlers finished... [+]")
    
-    
+    def nuclei_scan(self):
+        nuclei_scan_command = 'nuclei -l '+self.domain+'_urls -t /root/nuclei-templates/* -es info | notify'
+        print(" [*] Nuclei scan execute starting... [*]")
+        os.popen(nuclei_scan_command).read()
+        print(" [+] Nuclei scan execute finished [+]")
+
 
    
 
-    # def nuclei_scan(self):
-    #     nuclei_scan_command = 'nuclei -l '+self.domain+'_urls -t /root/nuclei-templates/* -es info | notify'
-    #     print(" [*] Nuclei scan execute starting... [*]")
-    #     os.popen(nuclei_scan_command).read()
-    #     print(" [+] Nuclei scan execute finished [+]")
-
+    
     
 
 print("""  ____                            _            __  __""")
@@ -68,4 +68,4 @@ domain_to_scan.domain_to_enumerate()
 domain_to_scan.fusion_domains()
 domain_to_scan.valit_domains()
 domain_to_scan.ulrs_to_param()
-# domain_to_scan.nuclei_scan()
+domain_to_scan.nuclei_scan()
