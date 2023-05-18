@@ -1,123 +1,35 @@
-from copyreg import remove_extension
-from os import *
-from os import geteuid
+import os
 
-#validate root
-class Install(object):
-    def __init__(self, start):
-        self.start = start
-        
-    def validate_root(self):
-        if not geteuid() == 0:
-            print("-] Please run this script as root... [-]")
-            exit()
-        else:
-            pass
-#Download and Install Golang
-class install_go(object):
-    def Download_go(self):
-        command_download_go = 'wget https://go.dev/dl/go1.20.1.linux-amd64.tar.gz'
-        print('[+] Golang Download Iniciado... [+]')
-        print(popen(command_download_go).read())
-        print('[+] Download feito com Sucesso... [+]')
+# Repositories
+repositories = [
+    "github.com/projectdiscovery/subfinder/v2/cmd/subfinder",
+    "github.com/Edu4rdSHL/findomain",
+    "github.com/michenriksen/aquatone",
+    "github.com/projectdiscovery/dnsx/cmd/dnsx",
+    "github.com/tomnomnom/tlsenum/cmd/tlsenum",
+    "github.com/projectdiscovery/puredns/cmd/puredns",
+    "github.com/maurosoria/dirsearch",
+    "github.com/tomnomnom/anew",
+    "github.com/tomnomnom/unfurl",
+    "github.com/JohnWoodman/katana",
+    "github.com/projectdiscovery/shuffledns/cmd/shuffledns"
+]
 
-             
-    def Remover_go(self):
-        command_remover_go = 'rm -rf /usr/local/go'
-        print('[+] Removendo Diretorio go... [+]')
-        print(popen(command_remover_go).read())
-        print('[+] Diretorio removido com Sucesso...[+]')
+# Install Go
+os.system("wget https://go.dev/dl/go1.20.4.linux-amd64.tar.gz")
+os.system("rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz")
+os.system("mv /usr/local/go/bin/* /usr/bin")
+os.system("go version")
 
-    def Extrair_go(sefl):
-        command_extrair = 'tar -C /usr/local -xzf go1.20.1.linux-amd64.tar.gz'
-        print('[+] Extraindo Golang... [+]')
-        print(popen(command_extrair).read())
-        print('[+] Golang extraido com Sucesso...[+]')
-    
-    def Mover_go(self):
-        command_movendo_go = 'mv /usr/local/go/bin/go /usr/bin'
-        print('[+] Movendo go... [+]')
-        print(popen(command_movendo_go).read())
-        print('[+] Movido com Sucesso...[+]')
+# Add Go path to .bashrc
+os.system("echo 'export PATH=$PATH:/usr/local/go/bin' >> /root/.bashrc")
 
-    def Mover_gofmt(self):
-        command_movendo_go = 'mv /usr/local/go/bin/gofmt /usr/bin'
-        print('[+] Movendo gofmt... [+]')
-        print(popen(command_movendo_go).read())
-        print('[+] Movido com Sucesso...[+]')
+# Install tools
+for repo in repositories:
+    os.system(f"go install {repo}@latest")
 
-    def Vericar_go(self):
-        command_verificar = 'go version'
-        print('[+] Verificando Golang... [+]')
-        print(popen(command_verificar).read())
-        print('[+] Instalado com Sucesso...[+]')
-
-#dowload go tools via go install
-class install_tools(object):
-    def download_amass():
-        print('[+] Amass Download Start... [+]')
-        command_download = 'go install -v github.com/OWASP/Amass/v3/...@master'
-        print('[+] Amass Download Finished... [+]')      
-    
-    def dowload_anew():
-        print('[+] Anew Download Start... [+]')
-        command_download = 'go install -v github.com/tomnomnom/anew@latest'
-        print('[+] Anew Download Finished... [+]')
-
-    def dowload_airixss():
-        print('[+] Airixss Download Start... [+]')
-        command_download = 'go install github.com/ferreiraklet/airixss@latest'
-        print('[+] Airixss Download Finished... [+]')
-
-    def dowload_cfchek():
-        print('[+] Cfchek Download Start... [+]')
-        command_download = '$ go install github.com/dwisiswant0/cf-check@latest'
-        print('[+] Cfchek Download Finished... [+]')
-
-    def dowload_chaos():
-        print('[+] Chaos Download start... [+]')
-        command_download = 'go install -v github.com/projectdiscovery/chaos-client/cmd/chaos@latest'
-        print('[+] Chaos Download Finished... [+]')
-
-    def dowload_katana():
-        print('[+] katana Download Start... [+]')
-        command_download = 'go install github.com/projectdiscovery/katana/cmd/katana@latest'
-        print('[+] Katana Download Finished... [+]')
-
-    def dowload_dalfox():
-        print('[+] Dalfox Download Start... [+]')
-        command_download = 'go install github.com/hahwul/dalfox/v2@latest'
-        print('[+] Dalfox Download Finished... [+]')
-
-
-
-
-
-(""" '########:'########::'####:'########:::'#######:::::'##::: ##:'########::::'########:::::'###::::'####:
-     ... ##..:: ##.... ##:. ##:: ##.... ##:'##.... ##:::: ###:: ##: ##.....::::: ##.... ##:::'## ##:::. ##::
-     ::: ##:::: ##:::: ##:: ##:: ##:::: ##: ##:::: ##:::: ####: ##: ##:::::::::: ##:::: ##::'##:. ##::: ##::
-     ::: ##:::: ########::: ##:: ########:: ##:::: ##:::: ## ## ##: ######:::::: ########::'##:::. ##:: ##::
-     ::: ##:::: ##.. ##:::: ##:: ##.... ##: ##:::: ##:::: ##. ####: ##...::::::: ##.....::: #########:: ##::
-     ::: ##:::: ##::. ##::: ##:: ##:::: ##: ##:::: ##:::: ##:. ###: ##:::::::::: ##:::::::: ##.... ##:: ##::
-     ::: ##:::: ##:::. ##:'####: ########::. #######::::: ##::. ##: ########:::: ##:::::::: ##:::: ##:'####:
-     :::..:::::..:::::..::....::........::::.......::::::..::::..::........:::::..:::::::::..:::::..::....::
-  """)
-
-user_start_input = str(input("Digite Start para Iniciar as Instalações: "))
-install_to_install = Install(user_start_input)
-install_to_install.validate_root()
-install_to_install.Download_go()
-install_to_install.Remover_go()
-install_to_install.Extrair_go()
-install_to_install.Mover_go()
-install_to_install.Mover_gofmt()
-install_to_install.Vericar_go()
-install_to_install.download_amass()
-install_to_install.download_anew()
-install_to_install.download_airixss()
-install_to_install.download_cfchek()
-install_to_install.download_chaos()
-install_to_install.download_katana()
-install_to_install.download_dalfox()
-
-
+# Verify installation
+os.system("echo 'Installed tools:'")
+for repo in repositories:
+    tool_name = repo.split("/")[-1]
+    os.system(f"echo {tool_name}")
