@@ -42,5 +42,9 @@ repositories = [
     "github.com/shenwei356/rush"
     "github.com/lc/subjs"
     "github.com/dwisiswant0/unew"
+    "github.com/lc/subjs@latest"
+    "github.com/tomnomnom/qsreplace@latest"
+    
+
 
 ]
