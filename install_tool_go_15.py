@@ -1,5 +1,5 @@
 import os
-from repo_go_1_20_install import repositories
+from repo_tools_go import repositories
 
 
 # Install Go
