@@ -19,6 +19,7 @@ repositories = [
     "github.com/projectdiscovery/dnsx/cmd/dnsx",
     "github.com/projectdiscovery/puredns/cmd/puredns",
     "github.com/projectdiscovery/chaos-client/cmd/chaos",
+    "github.com/projectdiscovery/asnmap/cmd/asnmap@latest",
     #-----------------------------------------------------
     #Tomnomnom tools:
     "install github.com/tomnomnom/waybackurls",
