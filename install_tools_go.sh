@@ -150,3 +150,6 @@ echo "Finished"
 echo "Install Subjst"
 go install github.com/lc/subjst@latest
 echo "Finished"
+echo "Install Amass"
+go install -v github.com/owasp-amass/amass/v4/...@master
+echo "Finished"
