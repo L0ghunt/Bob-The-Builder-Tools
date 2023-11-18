@@ -32,7 +32,8 @@ function install_projectdiscovery(){
   echo "9. Katana"
   echo "10. Dnsx"
   echo "11. alterx"
-  echo "12. Voltar ao menu principal"
+  echo "12. ALL"
+  echo "13. Voltar ao menu principal"
   read option
 
   case $option in
