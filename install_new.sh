@@ -222,6 +222,7 @@ function install_Hakluke() {
   echo "2. Hakredns"
   echo "3. Haktldextract"
   echo "4. Haklistgen"
+  echo "5. Voltar ao menu"
   read option
 
   case $option in 
