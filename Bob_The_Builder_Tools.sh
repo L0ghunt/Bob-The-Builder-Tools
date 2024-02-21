@@ -2,25 +2,26 @@
 
 # Função para instalar o Golang
 function install_golang() {
+ echo "run as sudo"
  echo "Download golang start"
- wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
+ wget https://go.dev/dl/go1.21.0.linux-amd64.tar.gz
  echo "Download golang Fineshed"
  echo "Start descompact"
- rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
+ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.21.0.linux-amd64.tar.gz
  echo "Fineshed descompact"
- echo "Movendo binarios"
- mv /usr/local/go/bin/* /usr/bin
- echo "Binarios movidos"
- echo "Verificando instalação"
+ echo "Add /usr/local/go/bin to the PATH environment variable"
+ export PATH=$PATH:/usr/local/go/bin
+ echo "Finished"
+ echo "Checking installation"
  go version
- echo "Verificação concluida"
+ echo "Verification completed"
  echo "Finished install golang"
 }
 
 # Função pra instalar tools projectdiscovery
 function install_projectdiscovery(){
   clear
-  echo "Escolha uma opção:"
+  echo "Choose an option:"
   echo "1. Nuclei"
   echo "2. Subfinder"
   echo "3. httpx"
@@ -32,8 +33,8 @@ function install_projectdiscovery(){
   echo "9. Katana"
   echo "10. Dnsx"
   echo "11. alterx"
-  echo "12. ALL"
-  echo "13. Voltar ao menu principal"
+  echo "12. Install all tools"
+  echo "13. Return to main menu"
   read option
 
   case $option in
@@ -71,46 +72,46 @@ function install_projectdiscovery(){
     go install github.com/projectdiscovery/alterx/cmd/alterx@latest
     ;;
   12)
-    echo "Start intall tools" | lolcat
-    echo "Install Nuclei" | lolcat
+    echo "Start intall tools" 
+    echo "Install Nuclei" 
     go install -v github.com/projectdiscovery/nuclei/v2/cmd/nuclei@latest
-    echo "Finished" | lolcat
-    echo "Install Subfinder" | lolcat
+    echo "Finished" 
+    echo "Install Subfinder"
     go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
-    echo "Finished" | lolcat
-    echo "Install Httpx" | lolcat
+    echo "Finished" 
+    echo "Install Httpx" 
     go install -v github.com/projectdiscovery/httpx/cmd/httpx@latest
-    echo "Finished" | lolcat
-    echo "Install Naabu" | lolcat
+    echo "Finished" 
+    echo "Install Naabu" 
     go install -v github.com/projectdiscovery/naabu/v2/cmd/naabu@latest
-    echo "Finished" | lolcat
-    echo "Install Interactsh" | lolcat
+    echo "Finished" 
+    echo "Install Interactsh" 
     go install -v github.com/projectdiscovery/interactsh/cmd/interactsh-client@latest
-    echo "Finished" | lolcat
-    echo "Install Notify" | lolcat
+    echo "Finished" 
+    echo "Install Notify" 
     go install -v github.com/projectdiscovery/notify/cmd/notify@latest
-    echo "Finished" | lolcat
-    echo "Install Tlsx" | lolcat
+    echo "Finished" 
+    echo "Install Tlsx" 
     go install github.com/projectdiscovery/tlsx/cmd/tlsx@latest
-    echo "Fineshed" | lolcat
-    echo "Install Uncover" | lolcat
+    echo "Fineshed" 
+    echo "Install Uncover" 
     go install -v github.com/projectdiscovery/uncover/cmd/uncover@latest
-    echo "Finished" | lolcat
-    echo "Install Katana" | lolcat
+    echo "Finished" 
+    echo "Install Katana" 
     go install github.com/projectdiscovery/katana/cmd/katana@latest
-    echo "Finished" | lolcat
-    echo "Install Dnsx" | lolcat
+    echo "Finished" 
+    echo "Install Dnsx" 
     go install -v github.com/projectdiscovery/dnsx/cmd/dnsx@latest
-    echo "Finished" | lolcat
-    echo "Install alterx" | lolcat
+    echo "Finished" 
+    echo "Install alterx" 
     go install github.com/projectdiscovery/alterx/cmd/alterx@latest
-    echo "Finished install projectdiscovery tools" | lolcat
+    echo "Finished install projectdiscovery tools" 
     ;;
   13)
    back_to_menu
    ;;
 *)
-   echo "Opção inválida."
+   echo "Invalid option."
    back_to_menu
    ;;
 esac
@@ -119,7 +120,7 @@ esac
 # Função para instalar tools do tomnomnom
 function install_tomnomnom(){
   clear
-  echo "Escolha uma opção"
+  echo "Choose an option"
   echo "1. anew" 
   echo "2. Assetfinder"
   echo "3. Waybackurls"
@@ -131,8 +132,8 @@ function install_tomnomnom(){
   echo "9. FFUF"
   echo "10. fff"
   echo "11. Unfurl"
-  echo "12. All"
-  echo "13. Voltar ao menu"
+  echo "12. Install all tools"
+  echo "13. Return to main menu"
   read option
 
   case $option in
@@ -170,45 +171,45 @@ function install_tomnomnom(){
      go install github.com/tomnomnom/unfurl@latest
      ;;
   12)
-     echo "Install Waybackurls" | lolcat
+     echo "Install Waybackurls" 
      go install github.com/tomnomnom/waybackurls@latest
-     echo "Finished" | lolcat
-     echo "Install Assetfinder" | lolcat
+     echo "Finished" 
+     echo "Install Assetfinder" 
      go install github.com/tomnomnom/assetfinder@latest
-     echo "Finished" | lolcat
-     echo "Install Httprobe" | lolcat
+     echo "Finished" 
+     echo "Install Httprobe" 
      go install github.com/tomnomnom/httprobe@latest
-     echo "Finished" | lolcat
-     echo "install Gf" | lolcat
+     echo "Finished" 
+     echo "install Gf" 
      go install github.com/tomnomnom/gf@latest
-     echo "Finished" | lolcat
-     echo "Install Gron" | lolcat
+     echo "Finished" 
+     echo "Install Gron" 
      go install github.com/tomnomnom/gron@latest
-     echo "Finished" | lolcat
-     echo "Install Qsreplace" | lolcat
+     echo "Finished" 
+     echo "Install Qsreplace" 
      go install github.com/tomnomnom/qsreplace@latest
-     echo "Finished" | lolcat
-     echo "Install Meg" | lolcat
+     echo "Finished" 
+     echo "Install Meg" 
      go install github.com/tomnomnom/meg@latest
-     echo "Finished" | lolcat
-     echo "install ffuf" | lolcat
+     echo "Finished" 
+     echo "install ffuf" 
      go install github.com/ffuf/ffuf@latest
-     echo "Finished" | lolcat
-     echo "Install fff" | lolcat
+     echo "Finished" 
+     echo "Install fff" 
      go install github.com/tomnomnom/fff
-     echo "Finished" | lolcat
-     echo "Install Unfurl" | lolcat
+     echo "Finished" 
+     echo "Install Unfurl" 
      go install github.com/tomnomnom/unfurl@latest
-     echo "Finished" | lolcat
-     echo "install Anew" | lolcat
+     echo "Finished" 
+     echo "install Anew" 
      go install github.com/tomnomnom/anew@latest
-     echo "Finished Install Tomnomnom tools" | lolcat
+     echo "Finished Install Tomnomnom tools" 
      ;;
 13)
    back_to_menu
    ;;
 *)
-   echo "Opção inválida."
+   echo "Invalid option."
    back_to_menu
    ;;
 esac
@@ -217,12 +218,13 @@ esac
 # Função para instalar tools do Hakluke
 function install_Hakluke() {
   clear
-  echo "Escolha uma opção:"
+  echo "Choose an option:"
   echo "1. Hakrawler"
   echo "2. Hakredns"
   echo "3. Haktldextract"
   echo "4. Haklistgen"
-  echo "5. Voltar ao menu"
+  echo "5. Install all tools"
+  echo "6. Return to main menu"
   read option
 
   case $option in 
@@ -239,10 +241,24 @@ function install_Hakluke() {
     go install github.com/hakluke/haklistgen@latest
     ;;
   5)
+    echo "hakrawler Install"
+    go install github.com/hakluke/hakrawler@latest
+    echo "hakrawler Finished"
+    echo "hakrevdns Install"
+    go install github.com/hakluke/hakrevdns@latest
+    echo "hakrevdns Finished"
+    echo "haktldextract Install"
+    go install github.com/hakluke/haktldextract@latest
+    echo "haktldextract Finished"
+    echo "haklistgen Install"
+    go install github.com/hakluke/haklistgen@latest
+    echo "haklistgen Finished"
+    ;;
+  6)
     back_to_menu
     ;;
   *)
-    echo "Opção inválida."
+    echo "Invalid option."
     back_to_menu
     ;;
   esac
@@ -250,7 +266,7 @@ function install_Hakluke() {
 # Função para instalar outras tools
 function install_addtools() {
   clear
-  echo "Escolha uma opção:"
+  echo "Choose an option:"
   echo "1. Dalfox"
   echo "2. Dirsearch"
   echo "3. Airxss"
@@ -270,8 +286,8 @@ function install_addtools() {
   echo "17. unew"
   echo "18. SubJSt"
   echo "19. Amass"
-  echo "20. All"
-  echo "21. voltar ao menu"
+  echo "20. Install all tools"
+  echo "21. Return to main menu"
   read option
 
   case $option in
@@ -396,23 +412,23 @@ function install_addtools() {
      back_to_menu
      ;;
    *)
-     echo "Opção inválida."
+     echo "Invalid option."
      back_to_menu
      ;;
   esac
 
 }
-# Função para voltar ao menu
+# Função para Return to main menu
 function back_to_menu() {
  clear
- echo "Escolha uma opção:"
+ echo "Choose an option:"
  echo "1. Instalar Golang"
  echo "2. Tools by Projectdiscovery"
  echo "3. Tools by Tomnomnom"
  echo "4. Tools by Hakluke"
- echo "5. Tools diversas"
- echo "6. ALL"
- echo "7. Sair"
+ echo "5. Additional tools"
+ echo "6. Install all tools"
+ echo "7. Exit"
  echo "0. Menu"
  read option
 
@@ -500,7 +516,7 @@ function back_to_menu() {
      echo "install Anew"
      go install github.com/tomnomnom/anew@latest
      echo "Finished"
-     echo "Finished Install Tomnomnom tools" | lolcat
+     echo "Finished Install Tomnomnom tools" 
      echo "Install Hakrawler"
      go install github.com/hakluke/hakrawler@latest
      echo "Finished"
@@ -513,7 +529,7 @@ function back_to_menu() {
      echo "Install Haklistgen"
      go install github.com/hakluke/haklistgen@latest
      echo "Finished"
-     echo "Finished Install Hakluke tools" | lolcat
+     echo "Finished Install Hakluke tools" 
      echo "Install Dalfox"
      go install github.com/hahwul/dalfox/v2@latest
      echo "Finished"
@@ -580,7 +596,7 @@ function back_to_menu() {
      back_to_menu
      ;;
    *)
-     echo "Opção inválida."
+     echo "Invalid option."
      back_to_menu
      ;;
  esac
@@ -588,14 +604,14 @@ function back_to_menu() {
 # Menu principal
 while true; do
 clear
- echo "Escolha uma opção:"
+ echo "Choose an option:"
  echo "1. Instalar Golang"
  echo "2. Tools by Projectdiscovery"
  echo "3. Tools by Tomnomnom"
  echo "4. Tools by Hakluke"
- echo "5. Tools diversas"
- echo "6. ALL"
- echo "7. Sair"
+ echo "5. additional tools"
+ echo "6. Install all tools"
+ echo "7. Exit"
  echo "0. Menu"
  read option
 
@@ -683,7 +699,7 @@ clear
      echo "install Anew"
      go install github.com/tomnomnom/anew@latest
      echo "Finished"
-     echo "Finished Install Tomnomnom tools" | lolcat
+     echo "Finished Install Tomnomnom tools" 
      echo "Install Hakrawler"
      go install github.com/hakluke/hakrawler@latest
      echo "Finished"
@@ -696,7 +712,7 @@ clear
      echo "Install Haklistgen"
      go install github.com/hakluke/haklistgen@latest
      echo "Finished"
-     echo "Finished Install Hakluke tools" | lolcat
+     echo "Finished Install Hakluke tools" 
      echo "Install Dalfox"
      go install github.com/hahwul/dalfox/v2@latest
      echo "Finished"
@@ -763,7 +779,7 @@ clear
      back_to_menu
      ;;
    *)
-     echo "Opção inválida."
+     echo "Invalid option."
      back_to_menu
      ;;
  esac
