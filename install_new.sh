@@ -3,10 +3,10 @@
 # Função para instalar o Golang
 function install_golang() {
  echo "Download golang start"
- wget https://go.dev/dl/go1.20.4.linux-amd64.tar.gz
+ wget https://go.dev/dl/go1.22.0.linux-amd64.tar.gz
  echo "Download golang Fineshed"
  echo "Start descompact"
- rm -rf /usr/local/go && tar -C /usr/local -xzf go1.20.4.linux-amd64.tar.gz
+ rm -rf /usr/local/go && tar -C /usr/local -xzf go1.22.0.linux-amd64.tar.gz
  echo "Fineshed descompact"
  echo "Movendo binarios"
  mv /usr/local/go/bin/* /usr/bin
